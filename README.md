@@ -71,3 +71,47 @@ y <- "192.168.0.1"
 str_split_one(y, pattern = stringr::fixed("."))
 #> [1] "192" "168" "0"   "1"
 ```
+
+The function `my_add()` will take two numeric parameters and produce the
+sum by adding them.
+
+``` r
+library(regexcite)
+(x <- 1)
+#> [1] 1
+(y <- 2)
+#> [1] 2
+my_add(x, y)
+#> [1] 3
+```
+
+### `my_add()`
+
+`my_add()` will also have different behaviors depending on the
+parameters given. For instance, if you only give it one numeric
+parameter x, it will produce the sum of x and a default value 10 for y.
+
+``` r
+library(regexcite)
+(x <- 3)
+#> [1] 3
+my_add(x)
+#> [1] 13
+```
+
+Moreover, if at least one parameter is NA, then the function will
+produce NA.
+
+``` r
+library(regexcite)
+(x <- 5)
+#> [1] 5
+(y <- NA)
+#> [1] NA
+my_add(x, y)
+#> [1] NA
+```
+
+If at least one parameter is a string instead of a numeric value, the
+function will give an error stating “One of your inputs contains a
+string value.”
